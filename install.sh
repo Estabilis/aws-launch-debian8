@@ -1,7 +1,6 @@
 #!/bin/bash
 # Launch script para Debian 8 - Jessie
 # Criado pela Estabillis por Daniel Ginês
-# Contato: daniel@estabilis.com
 #
 echo "atualizando o repositorio do Debian 8 - Jessie"
 sudo rm /etc/apt/sources.list.d/backports.list
