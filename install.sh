@@ -21,8 +21,8 @@ sudo apt-get upgrade -y
 sudo apt-get autoremove -y 
 echo "permitir que o apt use https"
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
-echo "instalar pacotes adicionais"
-sudo apt-get install -y nmap htop vim dbus 
+echo "instalar pacotes adicionais para gestao"
+sudo apt-get install -y nmap htop vim dbus sysstat
 echo "instalar o zabbix-agent"
 wget https://repo.zabbix.com/zabbix/4.0/debian/pool/main/z/zabbix-release/zabbix-release_4.0-3+jessie_all.deb
 sudo dpkg -i zabbix-release_4.0-3+jessie_all.deb
