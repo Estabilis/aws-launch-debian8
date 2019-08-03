@@ -5,7 +5,7 @@
 echo "atualizando o repositorio do Debian 8 - Jessie"
 sudo rm /etc/apt/sources.list.d/backports.list
 sudo rm /etc/apt/sources.list
-sudo cat <<EOF > /etc/apt/sources.list
+sudo -s cat <<EOF > /etc/apt/sources.list
 deb http://deb.debian.org/debian jessie main contrib non-free
 deb-src http://deb.debian.org/debian jessie main contrib non-free
 
@@ -30,7 +30,7 @@ sudo apt update
 sudo apt -y install zabbix-agent
 # fonte - https://stackoverflow.com/questions/4879025/creating-files-with-some-content-with-shell-script
 echo "atualizar o arquivo de configuracoes do zabbix-agent"
-sudo cat <<EOF > /etc/zabbix/zabbix_agentd.conf
+sudo bash -c cat <<EOF > /etc/zabbix/zabbix_agentd.conf
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix/zabbix_agentd.log
 LogFileSize=0
@@ -42,9 +42,9 @@ AllowRoot=1
 Include=/etc/zabbix/zabbix_agentd.d/*.conf
 EOF
 echo "ajustes no .bashrc - history"
-rm /home/admin/.bashrc
-sudo rm /root/.bashrc
-sudo cat <<EOF > /root/.bashrc
+# rm /home/admin/.bashrc
+# sudo rm /root/.bashrc
+sudo bash -c cat <<EOF > /root/.bashrc
 # Eternal bash history.
 # ---------------------
 # Undocumented feature which sets the size to "unlimited".
